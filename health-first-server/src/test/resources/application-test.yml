@@ -1,0 +1,37 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+  
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: false
+  
+  # Disable email sending in tests
+  mail:
+    host: localhost
+    port: 587
+    username: test@test.com
+    password: test
+
+# Security Configuration for tests
+security:
+  jwt:
+    secret: test-jwt-secret-key-for-testing-purposes-only
+    expiration: 86400000
+  bcrypt:
+    salt-rounds: 4 # Lower rounds for faster tests
+
+# Logging for tests
+logging:
+  level:
+    com.healthfirst: DEBUG
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN 
