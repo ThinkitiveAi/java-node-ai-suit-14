@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health First - Provider Dashboard</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/styles.css">
+  <link rel="stylesheet" href="src/css/dashboard.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo">
+        <span class="material-icons">health_and_safety</span>
+        <h1>Health First</h1>
+      </div>
+      <div class="user-info">
+        <span class="material-icons">account_circle</span>
+        <span id="provider-name">Dr. Smith</span>
+        <button id="logout-button" class="text-button">
+          <span class="material-icons">logout</span>
+          Logout
+        </button>
+      </div>
+    </header>
+
+    <nav class="app-nav">
+      <ul>
+        <li class="active"><a href="#availability">My Availability</a></li>
+        <li><a href="#appointments">Appointments</a></li>
+        <li><a href="#patients">Patients</a></li>
+      </ul>
+    </nav>
+
+    <main class="app-content">
+      <!-- Availability Section -->
+      <section id="availability-section" class="content-section">
+        <h2>My Availability</h2>
+        <div class="section-content">
+          <div class="card">
+            <div class="card-header">
+              <h3>Set Your Weekly Availability</h3>
+              <button id="save-availability" class="primary-button">Save Changes</button>
+            </div>
+            <div class="card-body">
+              <div id="availability-container" class="availability-grid">
+                <!-- Availability will be dynamically populated here -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Appointments Section -->
+      <section id="appointments-section" class="content-section hidden">
+        <h2>Appointments</h2>
+        <div class="section-content">
+          <div class="card">
+            <div class="card-header">
+              <h3>Upcoming Appointments</h3>
+              <div class="filter-controls">
+                <input type="date" id="appointment-date-filter" class="date-input">
+                <button id="filter-appointments" class="secondary-button">Filter</button>
+                <button id="clear-filter" class="text-button">Clear</button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div id="appointments-list" class="appointments-list">
+                <!-- Appointments will be dynamically populated here -->
+                <p class="empty-state-message">Loading appointments...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Patients Section (Placeholder) -->
+      <section id="patients-section" class="content-section hidden">
+        <h2>Patients</h2>
+        <div class="section-content">
+          <div class="card">
+            <div class="card-header">
+              <h3>Your Patients</h3>
+            </div>
+            <div class="card-body">
+              <p>Patient management functionality will be available in a future update.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="src/js/auth.js"></script>
+  <script src="src/js/dashboard.js"></script>
+  <script src="src/js/availability.js"></script>
+  <script src="src/js/appointments.js"></script>
+</body>
+</html>
